@@ -1,6 +1,6 @@
-# Galeri Aqila - 2
+# Aqila Masa PAUD
 
-> [[gridgallery](https://good-pastel.github.io/gridgallery)]
+> [[gridgallery](https://good-pastel.github.io/new-aqila/)]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -23,10 +23,10 @@
 
 ## Description
 
-> Photo Gallery with CSS-Grid. <br><br>
+> Photo Gallery with Landing Page. <br><br>
 > <img src="https://good-pastel.github.io/gridgallery/img/9.png">
 
-<p>&copy Good Pastel. 2024</p>
+<p>&copy Good Pastel. 2025</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 

@@ -99,8 +99,7 @@ header h1, header p, .toggle-btn {
 
     .gallery img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: auto;
       border-radius: 10px;
       cursor: pointer;
       transition: transform 0.3s, opacity 0.3s;
@@ -150,8 +149,8 @@ header h1, header p, .toggle-btn {
     }
 
     .control-btn {
-    width: 20px; /* sesuaikan ukuran */
-    height: 20px;
+    width: 50px; /* sesuaikan ukuran */
+    height: 50px;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -164,183 +163,29 @@ header h1, header p, .toggle-btn {
     .lightbox button:hover {
       background: #ffffff;
     }
-    .lightbox-caption {
-  position: absolute;
-  bottom: clamp(40px, 10%, 100px);
- /* atur jarak dari bawah */
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.5); /* latar hitam transparan */
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-align: center;
-  max-width: 80%;
-}
 
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @media (max-width: 600px) {
-  .lightbox-caption {
-    bottom: 8%;
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .lightbox-caption {
-    bottom: 12%;
-    font-size: 1.2rem;
-    padding: 10px 18px;
-  }
-}
-    /* Tambahan untuk navigasi */
-.nav-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.nav-content {
-  max-height: 0;
-  overflow: hidden;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: max-height 0.5s ease, transform 0.3s ease;
-}
-
-.nav-content.open {
-  max-height: 500px; /* cukup besar untuk isi navigasi */
-  transform: scaleY(1);
-}
-
-/* Mobile: Tampilkan toggle */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-}
-
-    .nav-toggle {
-  display: none;
-  background: #ff9a9e;
-  color: white;
-  font-size: 0.9rem;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-  transition: background 0.3s, transform 0.2s;
-  font-family: 'Outfit', sans-serif;
-}
-
-.nav-toggle:hover {
-  background: #f78ca0;
-  transform: scale(1.05);
-}
-
-.nav-content {
-  max-height: none;
-  overflow: visible;
-  transform: scaleY(1);
-  transition: none;
-}
-
-.nav-content a {
-  display: block;
-  margin: 4px 0;
-  color: blue;
-  text-decoration: none;
-}
-
-.nav-content a:hover {
-  text-decoration: underline;
-}
-
-/* Efek slide+scaleY untuk mobile */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: inline-block;
-  }
-
-  .nav-content {
-    max-height: 0;
-    overflow: hidden;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: max-height 0.4s ease, transform 0.3s ease;
-  }
-
-  .nav-content.open {
-    max-height: 500px;
-    transform: scaleY(1);
-  }
-}
-
-
   </style>
 </head>
 <body>
   <header>
     <button class="toggle-btn" id="themeToggle" onclick="toggleDarkMode()">🌙</button>
     <h1>Aqila's new Adventures</h1>
-    <p>🌸 Hai, aku Aqila! Ini tempat cerita seru aku di PAUD sampai TK nanti. Yuk, intip petualanganku di sini! ✨</p>
+    <p>Petualangan Kecil Aqila di Dunia PAUD</p>
   </header>
 
-  <div style="display: flex; flex-wrap: wrap; max-width: 1200px; margin: auto; padding: 1rem; gap: 1rem;">
-    <!-- Konten Utama -->
-    <main style="flex: 1 1 65%; min-width: 300px;">
-      <div class="gallery">
-        <img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" data-caption="Aqila berangkat ke PAUD" />
-        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-1.jpg" alt="Foto 2" />
-        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-2.jpg" alt="Foto 3" />
-        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-4.jpg" alt="Foto 4" />
-      </div>
-    </main>
-
-    <!-- Sidebar -->
-    <aside style="flex: 1 1 30%; min-width: 250px; position: sticky; top: 2rem; padding: 1rem;">
-  <div style="display: flex; flex-direction: column; gap: 2rem;">
-
-    <!-- Navigasi 1 -->
-    <div style="text-align: center;">
-      <button class="nav-toggle" data-target="nav1">☰ Navigasi 1</button>
-      <div class="nav-content" id="nav1">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
-        <a href="#">Link 5</a>
-      </div>
-    </div>
-
-    <!-- Navigasi 2 -->
-    <div style="text-align: center;">
-      <button class="nav-toggle" data-target="nav2">☰ Navigasi 2</button>
-      <div class="nav-content" id="nav2">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        <a href="#">Link 4</a>
-        <a href="#">Link 5</a>
-      </div>
-    </div>
-
-  </div>
-</aside>
-
-
+  <div class="gallery">
+    <img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" />
+    <img src="https://good-pastel.github.io/galeri-aqila/img/photo-1.jpg" alt="Foto 2" />
+    <img src="https://good-pastel.github.io/galeri-aqila/img/photo-2.jpg" alt="Foto 3" />
+    <img src="https://good-pastel.github.io/galeri-aqila/img/photo-4.jpg" alt="Foto 4" />
   </div>
 
   <div class="lightbox" id="lightbox">
     <img id="lightbox-img" src="" alt="Preview"/>
-    <div class="lightbox-caption"></div>
     <div class="controls">
  <img src="img/prev.png" alt="Prev" onclick="prevImage()" class="control-btn">
 <img src="img/next.png" alt="Next" onclick="nextImage()" class="control-btn">
@@ -392,8 +237,6 @@ let currentIndex = 0;
 function showImage(index) {
   currentIndex = index;
   lightboxImg.src = galleryImages[currentIndex].src;
-  const caption = galleryImages[currentIndex].getAttribute('data-caption');
-  document.querySelector('.lightbox-caption').textContent = caption || galleryImages[currentIndex].alt;
   lightbox.style.display = 'flex';
 }
 
@@ -403,12 +246,12 @@ function closeLightbox() {
 
 function nextImage() {
   currentIndex = (currentIndex + 1) % galleryImages.length;
-  showImage(currentIndex);
+  lightboxImg.src = galleryImages[currentIndex].src;
 }
 
 function prevImage() {
   currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  showImage(currentIndex);
+  lightboxImg.src = galleryImages[currentIndex].src;
 }
 
 galleryImages.forEach((img, index) => {
@@ -422,43 +265,6 @@ lightbox.addEventListener('click', (e) => {
     closeLightbox();
   }
 });
-    <script>
-// Hamburger toggle navigasi
-const toggles = document.querySelectorAll('.nav-toggle');
-toggles.forEach(toggle => {
-  toggle.addEventListener('click', () => {
-    const targetId = toggle.getAttribute('data-target');
-    const targetNav = document.getElementById(targetId);
-
-    // Tutup semua kecuali yang sedang diklik
-    document.querySelectorAll('.nav-content').forEach(nav => {
-      if (nav !== targetNav) nav.classList.remove('open');
-    });
-
-    targetNav.classList.toggle('open');
-  });
-});
-</script>
-
   </script>
-  <script>
-// Navigasi mobile
-const toggles = document.querySelectorAll('.nav-toggle');
-toggles.forEach(toggle => {
-  toggle.addEventListener('click', () => {
-    const targetId = toggle.getAttribute('data-target');
-    const targetNav = document.getElementById(targetId);
-    
-    // Tutup semua navigasi lain
-    document.querySelectorAll('.nav-content').forEach(nav => {
-      if (nav !== targetNav) nav.classList.remove('open');
-    });
-
-    // Toggle navigasi target
-    targetNav.classList.toggle('open');
-  });
-});
-</script>
-
 </body>
 </html>

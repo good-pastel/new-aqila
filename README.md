@@ -1,6 +1,6 @@
 # Aqila Masa PAUD
 
-> [[gridgallery](https://good-pastel.github.io/new-aqila/)]
+> [[petualangan aqila](https://good-pastel.github.io/new-aqila/)]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -23,7 +23,8 @@
 
 ## Description
 
-> Photo Gallery with Landing Page. <br><br>
+> Hai, aku Aqila! 🌼
+Ini adalah rumah online yang Bunda buat untukku, tempat menyimpan semua foto petualanganku selama aku sekolah di PAUD, sampai nanti aku jadi anak TK yang hebat! Yuk, ikuti serunya hari-hariku di sini~ 🎈✨ <br><br>
 > <img src="https://good-pastel.github.io/gridgallery/img/9.png">
 
 <p>&copy Good Pastel. 2025</p>

@@ -253,6 +253,7 @@ function showImage(index) {
   currentIndex = index;
   lightboxImg.src = galleryImages[currentIndex].src;
   const caption = galleryImages[currentIndex].getAttribute('data-caption');
+  document.querySelector('.lightbox-caption').textContent = caption || galleryImages[currentIndex].alt;
   lightbox.style.display = 'flex';
 }
 
@@ -262,12 +263,12 @@ function closeLightbox() {
 
 function nextImage() {
   currentIndex = (currentIndex + 1) % galleryImages.length;
-  lightboxImg.src = galleryImages[currentIndex].src;
+  showImage(currentIndex);
 }
 
 function prevImage() {
   currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  lightboxImg.src = galleryImages[currentIndex].src;
+  showImage(currentIndex);
 }
 
 galleryImages.forEach((img, index) => {

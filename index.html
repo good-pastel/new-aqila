@@ -1,341 +1,129 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Petualangan Kecil Aqila di Dunia PAUD</title>
-
-  <!-- Metadata SEO -->
-  <meta name="description" content="Petualangan Aqila - Tempat mengabadikan kenangan manis di dunia PAUD dengan tampilan modern, interaktif, dan responsif.">
-  <meta name="keywords" content="Galeri Aqila, Petualangan Anak, Galeri Keluarga, Foto Anak, Portofolio Keluarga, Kenangan Manis, Dunia PAUD">
-  <meta name="author" content="Devi Yolanda">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://good-pastel.github.io/galeri-aqila/img/favicon.png" type="image/png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-  --bg-color: #ffffff;
-  --text-color: #222222;
-  --accent: linear-gradient(135deg, 
-    #ff9a9e 0%,
-    #fad0c4 25%,
-    #a18cd1 50%,
-    #fbc2eb 75%,
-    #8ec5fc 100%
-  );
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Petualangan Kecil Aqila di Dunia PAUD</title>
+<meta name="description" content="Petualangan Aqila - Tempat mengabadikan kenangan manis di dunia PAUD dengan tampilan modern, interaktif, dan responsif.">
+<meta name="author" content="Devi Yolanda">
+<link rel="icon" href="https://good-pastel.github.io/galeri-aqila/img/favicon.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg-color: #ffffff;
+--text-color: #222222;
+--accent: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #a18cd1 50%, #fbc2eb 75%, #8ec5fc 100%);
 }
-
-   body.dark {
-  --bg-color: #1e1e2f;
-  --text-color: #f5f5f5;
-  --accent: linear-gradient(135deg, 
-    #a18cd1 0%,
-    #fbc2eb 50%,
-    #8ec5fc 100%
-  );
+body.dark {
+--bg-color: #1e1e2f;
+--text-color: #f5f5f5;
+--accent: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 50%, #8ec5fc 100%);
 }
-
-
-    body {
-      margin: 0;
-      font-family: 'Outfit', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    header {
-    position: relative;
-    text-align: center;
-    padding: 3rem 1rem 1rem;
-    background: var(--accent);
-    color: white;
-    overflow: hidden;
+body {
+margin: 0;
+font-family: 'Outfit', sans-serif;
+background: var(--bg-color);
+color: var(--text-color);
+transition: background 0.3s, color 0.3s;
 }
-
+header {
+position: relative;
+text-align: center;
+padding: 3rem 1rem 1rem;
+background: var(--accent);
+color: white;
+overflow: hidden;
+}
 header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('img/header-bg.webp') center/cover no-repeat;
-    opacity: 0.3; /* atur transparansi */
-    z-index: 0;
+content: "";
+position: absolute;
+top: 0; left: 0; right: 0; bottom: 0;
+background: url('img/header-bg.webp') center/cover no-repeat;
+opacity: 0.3;
+z-index: 0;
 }
-
-header h1, header p, .toggle-btn {
-    position: relative;
-    z-index: 1; /* agar berada di atas gambar */
+header h1, header p, .toggle-btn { position: relative; z-index: 1; }
+.toggle-btn {
+position: absolute; top: 20px; right: 20px;
+background: transparent; border: none; color: white;
+font-size: 1.5rem; cursor: pointer; transition: transform 0.2s;
 }
-
-
-    .toggle-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .toggle-btn:hover {
-      transform: scale(1.2);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s, opacity 0.3s;
-      opacity: 0.6;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      flex-direction: column;
-      animation: fadeIn 0.3s;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(255,255,255,0.2);
-      margin-bottom: 1rem;
-    }
-
-    .lightbox .controls {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .lightbox button {
-      background: #ffffffaa;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .control-btn {
-    width: 20px; /* sesuaikan ukuran */
-    height: 20px;
-    cursor: pointer;
-    transition: transform 0.2s;
+.toggle-btn:hover { transform: scale(1.2); }
+.container {
+display: flex; flex-wrap: wrap; max-width: 1200px;
+margin: auto; padding: 1rem; gap: 1rem;
 }
-
-.control-btn:hover {
-    transform: scale(1.2);
+.sidebar {
+flex: 1 1 25%; min-width: 200px;
+text-align: center; display: flex; flex-direction: column; gap: 1rem;
 }
-
-
-    .lightbox button:hover {
-      background: #ffffff;
-    }
-    .lightbox-caption {
-  position: absolute;
-  bottom: clamp(40px, 10%, 100px);
- /* atur jarak dari bawah */
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.5); /* latar hitam transparan */
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-align: center;
-  max-width: 80%;
+.nav-section h3 { margin-bottom: 0.5rem; }
+.nav-section a {
+display: block; margin: 0.3rem 0; text-decoration: none; color: #333;
+background: #f8d5e0; padding: 0.5rem; border-radius: 6px;
+transition: background 0.3s;
 }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @media (max-width: 600px) {
-  .lightbox-caption {
-    bottom: 8%;
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
+.nav-section a:hover { background: #fbc2eb; }
+.main-content {
+flex: 1 1 70%; min-width: 280px;
 }
-
-@media (min-width: 1200px) {
-  .lightbox-caption {
-    bottom: 12%;
-    font-size: 1.2rem;
-    padding: 10px 18px;
-  }
+.gallery {
+display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem; padding: 1rem; max-width: 100%; margin: auto;
 }
-
-  </style>
+.gallery img {
+width: 100%; height: 200px; object-fit: cover;
+border-radius: 10px; cursor: pointer;
+transition: transform 0.3s, opacity 0.3s; opacity: 0.7;
+}
+.gallery img:hover { transform: scale(1.05); opacity: 1; }
+@media (max-width: 768px) {
+.container { flex-direction: column; }
+.sidebar { order: 0; }
+.main-content { order: 1; }
+}
+</style>
 </head>
 <body>
-  <header>
-    <button class="toggle-btn" id="themeToggle" onclick="toggleDarkMode()">🌙</button>
-    <h1>Aqila's new Adventures</h1>
-    <p>🌸 Hai, aku Aqila! Ini tempat cerita seru aku di PAUD sampai TK nanti. Yuk, intip petualanganku di sini! ✨</p>
-  </header>
-
-  <div style="display: flex; flex-wrap: wrap; max-width: 1200px; margin: auto; padding: 1rem; gap: 1rem;">
-    <!-- Konten Utama -->
-    <main style="flex: 1 1 65%; min-width: 300px;">
-      <div class="gallery">
-        <img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" data-caption="Aqila berangkat ke PAUD" />
-        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-1.jpg" alt="Foto 2" />
-        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-2.jpg" alt="Foto 3" />
-        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-4.jpg" alt="Foto 4" />
-      </div>
-    </main>
-
-    <!-- Sidebar -->
-    <aside style="flex: 1 1 30%; min-width: 250px; position: sticky; top: 2rem; padding: 1rem;">
-  <div style="display: flex; flex-direction: column; gap: 2rem;">
-    
-    <!-- Navigasi 1 -->
-    <div style="text-align: center;">
-      <h3 style="margin-bottom: 0.5rem;">Navigasi 1</h3>
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <a href="#" style="text-decoration: none; color: blue;">Link 1</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 2</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 3</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 4</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 5</a>
-      </div>
-    </div>
-
-    <!-- Navigasi 2 -->
-    <div style="text-align: center;">
-      <h3 style="margin-bottom: 0.5rem;">Navigasi 2</h3>
-      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-        <a href="#" style="text-decoration: none; color: blue;">Link 1</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 2</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 3</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 4</a>
-        <a href="#" style="text-decoration: none; color: blue;">Link 5</a>
-      </div>
-    </div>
-
-  </div>
+<header>
+<button class="toggle-btn" id="themeToggle" onclick="toggleDarkMode()">🌙</button>
+<h1>Aqila's new Adventures</h1>
+<p>🌸 Hai, aku Aqila! Ini tempat cerita seru aku di PAUD sampai TK nanti. Yuk, intip petualanganku di sini! ✨</p>
+</header>
+<div class="container">
+<aside class="sidebar">
+<div class="nav-section">
+<h3>Navigasi 1</h3>
+<a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a><a href="#">Link 4</a><a href="#">Link 5</a>
+</div>
+<div class="nav-section">
+<h3>Navigasi 2</h3>
+<a href="#">Link 1</a><a href="#">Link 2</a><a href="#">Link 3</a><a href="#">Link 4</a><a href="#">Link 5</a>
+</div>
 </aside>
-
-  </div>
-
-  <div class="lightbox" id="lightbox">
-    <img id="lightbox-img" src="" alt="Preview"/>
-    <div class="lightbox-caption"></div>
-    <div class="controls">
- <img src="img/prev.png" alt="Prev" onclick="prevImage()" class="control-btn">
-<img src="img/next.png" alt="Next" onclick="nextImage()" class="control-btn">
-<img src="img/close.png" alt="Close" onclick="closeLightbox()" class="control-btn">
-
-    </div>
-  </div>
-
-  <script>
-function applyDarkModePreference() {
-  const userPref = localStorage.getItem('theme');
-  const themeToggle = document.getElementById('themeToggle');
-
-  if (userPref === 'dark') {
-    document.body.classList.add('dark');
-    themeToggle.textContent = '☀️';
-  } else if (userPref === 'light') {
-    document.body.classList.remove('dark');
-    themeToggle.textContent = '🌙';
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.classList.add('dark');
-    themeToggle.textContent = '☀️';
-  } else {
-    themeToggle.textContent = '🌙';
-  }
-}
-
-function toggleDarkMode() {
-  const themeToggle = document.getElementById('themeToggle');
-  if (document.body.classList.contains('dark')) {
-    document.body.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-    themeToggle.textContent = '🌙';
-  } else {
-    document.body.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-    themeToggle.textContent = '☀️';
-  }
-}
-
+<main class="main-content">
+<div class="gallery">
+<img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" data-caption="Aqila berangkat ke PAUD" />
+<img src="https://good-pastel.github.io/galeri-aqila/img/photo-1.jpg" alt="Foto 2" />
+<img src="https://good-pastel.github.io/galeri-aqila/img/photo-2.jpg" alt="Foto 3" />
+<img src="https://good-pastel.github.io/galeri-aqila/img/photo-4.jpg" alt="Foto 4" />
+</div>
+</main>
+</div>
+<script>
+function applyDarkModePreference(){
+const userPref = localStorage.getItem('theme');
+const themeToggle = document.getElementById('themeToggle');
+if(userPref==='dark'){document.body.classList.add('dark');themeToggle.textContent='☀️';}
+else if(userPref==='light'){document.body.classList.remove('dark');themeToggle.textContent='🌙';}
+else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');themeToggle.textContent='☀️';}
+else{themeToggle.textContent='🌙';}}
+function toggleDarkMode(){
+const themeToggle=document.getElementById('themeToggle');
+if(document.body.classList.contains('dark')){document.body.classList.remove('dark');localStorage.setItem('theme','light');themeToggle.textContent='🌙';}
+else{document.body.classList.add('dark');localStorage.setItem('theme','dark');themeToggle.textContent='☀️';}}
 applyDarkModePreference();
-
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const galleryImages = document.querySelectorAll('.gallery img');
-
-let currentIndex = 0;
-
-function showImage(index) {
-  currentIndex = index;
-  lightboxImg.src = galleryImages[currentIndex].src;
-  const caption = galleryImages[currentIndex].getAttribute('data-caption');
-  document.querySelector('.lightbox-caption').textContent = caption || galleryImages[currentIndex].alt;
-  lightbox.style.display = 'flex';
-}
-
-function closeLightbox() {
-  lightbox.style.display = 'none';
-}
-
-function nextImage() {
-  currentIndex = (currentIndex + 1) % galleryImages.length;
-  showImage(currentIndex);
-}
-
-function prevImage() {
-  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  showImage(currentIndex);
-}
-
-galleryImages.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    showImage(index);
-  });
-});
-
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    closeLightbox();
-  }
-});
-  </script>
+</script>
 </body>
 </html>

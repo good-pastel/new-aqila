@@ -252,7 +252,6 @@ let currentIndex = 0;
 function showImage(index) {
   currentIndex = index;
   lightboxImg.src = galleryImages[currentIndex].src;
-  const caption = galleryImages[currentIndex].alt; // Pakai alt sebagai caption
   const caption = galleryImages[currentIndex].getAttribute('data-caption');
   lightbox.style.display = 'flex';
 }

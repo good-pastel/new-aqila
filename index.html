@@ -164,6 +164,19 @@ header h1, header p, .toggle-btn {
     .lightbox button:hover {
       background: #ffffff;
     }
+    .lightbox-caption {
+  position: absolute;
+  bottom: 100px; /* atur jarak dari bawah */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5); /* latar hitam transparan */
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 80%;
+}
 
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -179,7 +192,7 @@ header h1, header p, .toggle-btn {
   </header>
 
   <div class="gallery">
-    <img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" />
+    <img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" data-caption="Aqila berangkat ke PAUD" />
     <img src="https://good-pastel.github.io/galeri-aqila/img/photo-1.jpg" alt="Foto 2" />
     <img src="https://good-pastel.github.io/galeri-aqila/img/photo-2.jpg" alt="Foto 3" />
     <img src="https://good-pastel.github.io/galeri-aqila/img/photo-4.jpg" alt="Foto 4" />
@@ -187,6 +200,7 @@ header h1, header p, .toggle-btn {
 
   <div class="lightbox" id="lightbox">
     <img id="lightbox-img" src="" alt="Preview"/>
+    <div class="lightbox-caption"></div>
     <div class="controls">
  <img src="img/prev.png" alt="Prev" onclick="prevImage()" class="control-btn">
 <img src="img/next.png" alt="Next" onclick="nextImage()" class="control-btn">
@@ -238,6 +252,8 @@ let currentIndex = 0;
 function showImage(index) {
   currentIndex = index;
   lightboxImg.src = galleryImages[currentIndex].src;
+  const caption = galleryImages[currentIndex].alt; // Pakai alt sebagai caption
+  const caption = galleryImages[currentIndex].getAttribute('data-caption');
   lightbox.style.display = 'flex';
 }
 

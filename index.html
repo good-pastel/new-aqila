@@ -226,6 +226,63 @@ header h1, header p, .toggle-btn {
   }
 }
 
+    .nav-toggle {
+  display: none;
+  background: #ff9a9e;
+  color: white;
+  font-size: 0.9rem;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s, transform 0.2s;
+  font-family: 'Outfit', sans-serif;
+}
+
+.nav-toggle:hover {
+  background: #f78ca0;
+  transform: scale(1.05);
+}
+
+.nav-content {
+  max-height: none;
+  overflow: visible;
+  transform: scaleY(1);
+  transition: none;
+}
+
+.nav-content a {
+  display: block;
+  margin: 4px 0;
+  color: blue;
+  text-decoration: none;
+}
+
+.nav-content a:hover {
+  text-decoration: underline;
+}
+
+/* Efek slide+scaleY untuk mobile */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .nav-content {
+    max-height: 0;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: max-height 0.4s ease, transform 0.3s ease;
+  }
+
+  .nav-content.open {
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+}
+
 
   </style>
 </head>
@@ -250,7 +307,7 @@ header h1, header p, .toggle-btn {
     <!-- Sidebar -->
     <aside style="flex: 1 1 30%; min-width: 250px; position: sticky; top: 2rem; padding: 1rem;">
   <div style="display: flex; flex-direction: column; gap: 2rem;">
-    
+
     <!-- Navigasi 1 -->
     <div style="text-align: center;">
       <button class="nav-toggle" data-target="nav1">☰ Navigasi 1</button>
@@ -277,6 +334,7 @@ header h1, header p, .toggle-btn {
 
   </div>
 </aside>
+
 
   </div>
 
@@ -364,6 +422,24 @@ lightbox.addEventListener('click', (e) => {
     closeLightbox();
   }
 });
+    <script>
+// Hamburger toggle navigasi
+const toggles = document.querySelectorAll('.nav-toggle');
+toggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const targetId = toggle.getAttribute('data-target');
+    const targetNav = document.getElementById(targetId);
+
+    // Tutup semua kecuali yang sedang diklik
+    document.querySelectorAll('.nav-content').forEach(nav => {
+      if (nav !== targetNav) nav.classList.remove('open');
+    });
+
+    targetNav.classList.toggle('open');
+  });
+});
+</script>
+
   </script>
   <script>
 // Navigasi mobile

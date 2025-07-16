@@ -198,11 +198,80 @@ header h1, header p, .toggle-btn {
     padding: 10px 18px;
   }
 }
+/* Navigasi Atas */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--accent);
+  padding: 0.75rem 1rem;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.top-nav a:hover {
+  opacity: 0.8;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 0;
+    overflow: hidden;
+    background: var(--accent);
+    transition: max-height 0.4s ease, transform 0.3s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  .top-nav.open {
+    max-height: 300px;
+    transform: scaleY(1);
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+}
 
   </style>
 </head>
 <body>
   <header>
+    <!-- Tombol Hamburger (mobile only) -->
+<button class="hamburger-btn" id="hamburgerToggle">☰</button>
+
+<!-- Navigasi Atas -->
+<nav class="top-nav" id="topNav">
+  <a href="#">Beranda</a>
+  <a href="#">Galeri</a>
+  <a href="#">Tentang</a>
+  <a href="#">Kontak</a>
+</nav>
+
     <button class="toggle-btn" id="themeToggle" onclick="toggleDarkMode()">🌙</button>
     <h1>Aqila's new Adventures</h1>
     <p>🌸 Hai, aku Aqila! Ini tempat cerita seru aku di PAUD sampai TK nanti. Yuk, intip petualanganku di sini! ✨</p>
@@ -300,5 +369,15 @@ lightbox.addEventListener('click', (e) => {
   }
 });
   </script>
+  <script>
+// Toggle navigasi atas di mobile
+const hamburgerToggle = document.getElementById('hamburgerToggle');
+const topNav = document.getElementById('topNav');
+
+hamburgerToggle.addEventListener('click', () => {
+  topNav.classList.toggle('open');
+});
+</script>
+
 </body>
 </html>

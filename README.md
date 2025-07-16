@@ -25,7 +25,7 @@
 
 > Hai, aku Aqila! 🌼
 Ini adalah rumah online yang Bunda buat untukku, tempat menyimpan semua foto petualanganku selama aku sekolah di PAUD, sampai nanti aku jadi anak TK yang hebat! Yuk, ikuti serunya hari-hariku di sini~ 🎈✨ <br><br>
-> <img src="https://good-pastel.github.io/gridgallery/img/9.png">
+> <img src="https://raw.githubusercontent.com/good-pastel/new-aqila/refs/heads/main/img/aqila-new.jpg">
 
 <p>&copy Good Pastel. 2025</p>
 

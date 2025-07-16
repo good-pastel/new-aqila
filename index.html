@@ -208,11 +208,28 @@ header h1, header p, .toggle-btn {
     <p>🌸 Hai, aku Aqila! Ini tempat cerita seru aku di PAUD sampai TK nanti. Yuk, intip petualanganku di sini! ✨</p>
   </header>
 
-  <div class="gallery">
-    <img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" data-caption="Aqila berangkat ke PAUD" />
-    <img src="https://good-pastel.github.io/galeri-aqila/img/photo-1.jpg" alt="Foto 2" />
-    <img src="https://good-pastel.github.io/galeri-aqila/img/photo-2.jpg" alt="Foto 3" />
-    <img src="https://good-pastel.github.io/galeri-aqila/img/photo-4.jpg" alt="Foto 4" />
+  <div style="display: flex; flex-wrap: wrap; max-width: 1200px; margin: auto; padding: 1rem; gap: 1rem;">
+    <!-- Konten Utama -->
+    <main style="flex: 1 1 65%; min-width: 300px;">
+      <div class="gallery">
+        <img src="img/16072025_berangkat_paud.jpg" alt="Foto 1" data-caption="Aqila berangkat ke PAUD" />
+        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-1.jpg" alt="Foto 2" />
+        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-2.jpg" alt="Foto 3" />
+        <img src="https://good-pastel.github.io/galeri-aqila/img/photo-4.jpg" alt="Foto 4" />
+      </div>
+    </main>
+
+    <!-- Sidebar Navigasi 2 Kolom -->
+    <aside style="flex: 1 1 30%; min-width: 250px; position: sticky; top: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+        <a href="#galeri" style="background: #f8d5e0; display: block; text-align: center; padding: 0.75rem; border-radius: 8px; text-decoration: none; color: #333;">Galeri</a>
+        <a href="#tentang" style="background: #f8d5e0; display: block; text-align: center; padding: 0.75rem; border-radius: 8px; text-decoration: none; color: #333;">Tentang</a>
+        <a href="#album-juli" style="background: #f8d5e0; display: block; text-align: center; padding: 0.75rem; border-radius: 8px; text-decoration: none; color: #333;">Album Juli</a>
+        <a href="#album-juni" style="background: #f8d5e0; display: block; text-align: center; padding: 0.75rem; border-radius: 8px; text-decoration: none; color: #333;">Album Juni</a>
+        <a href="#kontak" style="background: #f8d5e0; display: block; text-align: center; padding: 0.75rem; border-radius: 8px; text-decoration: none; color: #333;">Kontak</a>
+        <a href="#video" style="background: #f8d5e0; display: block; text-align: center; padding: 0.75rem; border-radius: 8px; text-decoration: none; color: #333;">Video</a>
+      </div>
+    </aside>
   </div>
 
   <div class="lightbox" id="lightbox">

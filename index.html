@@ -406,6 +406,12 @@ lightbox.addEventListener('click', (e) => {
   }
 });
   </script>
+<script>
+//toggle navigasi atas di mobile
+const hamburgerToggle = document.getElementById('hamburgerToggle');
+const topNav = document.getElementById('topNav');
+
+hamburgerToggle.addEventListener('click',()=>{ topNav.classList.toggle('open');});
 
 </body>
 </html>
